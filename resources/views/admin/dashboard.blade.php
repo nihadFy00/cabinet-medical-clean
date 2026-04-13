@@ -12,14 +12,15 @@
         .card-stat { border-radius: 15px; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .card-stat:hover { transform: translateY(-5px); transition: 0.3s; }
         .welcome-card { background: linear-gradient(135deg, #1F3864, #2E74B5); border-radius: 15px; }
+        /* Style pour transformer les liens en boutons parfaits */
+        .btn-action { display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">
+        <a class="navbar-brand fw-bold" href="{{ url('/admin/dashboard') }}">
             <i class="bi bi-hospital"></i> Cabinet Médical
         </a>
         <div class="ms-auto d-flex align-items-center gap-3">
@@ -39,7 +40,6 @@
 
 <div class="container mt-4">
 
-    <!-- WELCOME CARD -->
     <div class="welcome-card text-white p-4 mb-4">
         <div class="d-flex align-items-center gap-3">
             <span style="font-size: 3rem;">👑</span>
@@ -50,7 +50,6 @@
         </div>
     </div>
 
-    <!-- STATS CARDS -->
     <div class="row g-4 mb-4">
         <div class="col-md-3">
             <div class="card card-stat p-3 text-center">
@@ -82,7 +81,6 @@
         </div>
     </div>
 
-    <!-- ACTIONS RAPIDES -->
     <div class="card border-0 shadow-sm">
         <div class="card-header bg-white fw-bold">
             <i class="bi bi-lightning-charge text-warning"></i> Actions Rapides
@@ -90,24 +88,24 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-md-3">
-                    <button class="btn btn-primary w-100">
-                        <i class="bi bi-people"></i> Gérer Utilisateurs
-                    </button>
+                    <a href="{{ route('patients.index') }}" class="btn btn-primary w-100 btn-action">
+                        <i class="bi bi-people"></i> Gérer Patients
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <button class="btn btn-success w-100">
+                    <a href="{{ route('medecins.create') }}" class="btn btn-success w-100 btn-action">
                         <i class="bi bi-person-plus"></i> Ajouter Médecin
-                    </button>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <button class="btn btn-info w-100 text-white">
+                    <a href="#" class="btn btn-info w-100 text-white btn-action">
                         <i class="bi bi-graph-up"></i> Statistiques
-                    </button>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <button class="btn btn-secondary w-100">
+                    <a href="#" class="btn btn-secondary w-100 btn-action">
                         <i class="bi bi-gear"></i> Configuration
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

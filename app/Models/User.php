@@ -6,11 +6,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-<<<<<<< HEAD
+
 use Spatie\Permission\Traits\HasRoles; // 👈 AJOUTER cette ligne
-=======
+
 use Illuminate\Database\Eloquent\Relations\HasOne;
->>>>>>> 477a3a31b7c466fdb92c6cf36f0537ff94bfa7f4
 
 class User extends Authenticatable
 {
@@ -50,9 +49,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-<<<<<<< HEAD
-}
-=======
+
+
+
+
     public function patient(): HasOne
     {
         return $this->hasOne(Patient::class);
@@ -66,4 +66,3 @@ class User extends Authenticatable
         return $this->hasOne(Medecin::class);
     }
 }
->>>>>>> 477a3a31b7c466fdb92c6cf36f0537ff94bfa7f4
