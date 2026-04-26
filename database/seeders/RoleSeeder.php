@@ -18,24 +18,24 @@ class RoleSeeder extends Seeder
             ['email' => 'admin@cabinet.com'],
             ['name' => 'Admin Test', 'password' => Hash::make('password123')]
         );
-        $admin->assignRole('admin');
+        if (!$admin->hasRole('admin')) $admin->assignRole('admin');
 
         $doctor = User::firstOrCreate(
             ['email' => 'doctor@cabinet.com'],
             ['name' => 'Docteur Test', 'password' => Hash::make('password123')]
         );
-        $doctor->assignRole('doctor');
+        if (!$doctor->hasRole('doctor')) $doctor->assignRole('doctor');
 
         $secretary = User::firstOrCreate(
             ['email' => 'secretary@cabinet.com'],
             ['name' => 'Secretaire Test', 'password' => Hash::make('password123')]
         );
-        $secretary->assignRole('secretary');
+        if (!$secretary->hasRole('secretary')) $secretary->assignRole('secretary');
 
         $patient = User::firstOrCreate(
             ['email' => 'patient@cabinet.com'],
             ['name' => 'Patient Test', 'password' => Hash::make('password123')]
         );
-        $patient->assignRole('patient');
+        if (!$patient->hasRole('patient')) $patient->assignRole('patient');
     }
 }
