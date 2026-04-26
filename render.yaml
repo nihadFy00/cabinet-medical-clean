@@ -1,9 +1,8 @@
-﻿services:
+services:
   - type: web
     name: cabinet-medical-clean
-    env: php
-    buildCommand: composer install --no-dev --optimize-autoloader && npm install && npm run build
-    startCommand: php artisan migrate --force && php artisan db:seed --class=RoleSeeder --force && php artisan serve --host=0.0.0.0 --port=$PORT
+    env: docker
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: APP_ENV
         value: production
