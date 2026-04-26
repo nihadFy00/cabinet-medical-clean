@@ -20,4 +20,4 @@ RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-avail
 RUN a2enmod rewrite
 
 EXPOSE 80
-CMD php artisan migrate --force && php artisan db:seed --class=RoleSeeder --force 2>/dev/null || true && apache2-foregroundRUN echo "ServerName cabinet-medical-clean.onrender.com" >> /etc/apache2/apache2.conf
+CMD php artisan migrate --force && php artisan db:seed --class=RoleSeeder --force 2>/dev/null; apache2-foreground
